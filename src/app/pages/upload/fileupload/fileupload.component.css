@@ -1,0 +1,7 @@
+::ng-deep .ui-fileupload-choose {
+    margin-right: 2rem !important;
+}
+
+::ng-deep p-button {
+    margin-right: 2rem !important;
+}

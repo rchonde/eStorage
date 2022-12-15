@@ -1,0 +1,25 @@
+// #navbar-main {
+//     position: fixed;
+//     width: 100%;
+//     right: 0;
+//     height: 64px;
+//     z-index: 12;
+//     padding: 3rem 0;
+// }
+#navbar-main {
+    position: fixed;
+    width: 100%;
+    right: 0;
+    height: 85px;
+    z-index: 12;
+    padding: 2rem 0;
+   background: #CC0000 !important;
+   border-bottom: 2px solid #FFCC00 !important;
+}
+.dropdown-item:hover{
+    background-color: #88b0c3;
+    color: #fff;
+}
+.navbar{
+    padding-right: 0 !important;
+}
