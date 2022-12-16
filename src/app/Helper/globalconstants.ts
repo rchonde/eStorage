@@ -26,7 +26,7 @@ export class Globalconstants {
 //string = 'http://192.168.0.155/EDMS/api/';
 //string = 'https://annapurana.crownims.com/annapuranaDMS/api/';
 
- //string = 'https://DMSTest.crownims.com/DMSTestDMS/api/';
+ string = 'https://DMSTest.crownims.com/DMSTestDMS/api/';
 //
 //string = 'http://172.25.1.170/Nayaradms/api/';
 
@@ -83,7 +83,7 @@ export class Globalconstants {
 
 
 //113.193.177.29
-string = 'https://orangecounty.crownims.com/orangecountyDMS/api/';
+//string = 'https://orangecounty.crownims.com/orangecountyDMS/api/';
 
 //GDHospital
 

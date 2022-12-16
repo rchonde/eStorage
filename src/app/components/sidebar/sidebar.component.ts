@@ -393,7 +393,7 @@ export class SidebarComponent implements OnInit {
           icontype: "fa fa-certificate text-danger",
           isCollapsed: true,
           children: [
-            { path: "template", title: "Template", type: "link", ChildID: 0 },
+           // { path: "template", title: "Template", type: "link", ChildID: 0 },
           ]
         }
         break;
@@ -430,8 +430,8 @@ export class SidebarComponent implements OnInit {
         route = { path: "cabinet-mapping", title: "Cabinet Mapping", type: "link" }
         break;
       }
-      case "TemplateConfiguration":{
-        route = { path: "TemplateConfiguration", title: "Template Configuration", type: "link" }
+      case "Template":{
+        route = { path: "template", title: "Template", type: "link" }
         break;
       }
       case "Sub Folder":{
