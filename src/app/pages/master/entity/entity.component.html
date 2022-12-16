@@ -1,7 +1,14 @@
-<div class=" header bg-danger pb-6">
+<div class="master">
+  <ul class="nav nav-tabs header container-fluid bg-danger pb-3" role="tablist">
+      <li><a href="#dmsStatistics" class="active" data-toggle="tab">Sub Folder</a></li>
+      <li><a href="#documentControl" data-toggle="tab">Sub Folder Mapping</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="dmsStatistics">
+<div class=" header pt-2 bg-danger pb-6">
   <div class=" container-fluid">
     <div class=" header-body">
-      <div class=" row align-items-center py-4">
+      <div class=" row align-items-center pb-4">
         <div class=" col-lg-6 col-7">
           <h6 class=" h2 text-white d-inline-block mb-0">Sub Folder</h6>
 
@@ -138,3 +145,9 @@
     </div>
   </div>
 </ng-template>
+</div>
+<div class="tab-pane fade" id="documentControl">
+  <app-entity-mapping></app-entity-mapping>>
+</div>
+</div>
+</div>

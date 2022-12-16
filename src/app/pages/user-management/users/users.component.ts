@@ -52,7 +52,13 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.AddUserForm = this.formBuilder.group({
       id: [""],
-      name: new FormControl('', [Validators.required , Validators.pattern('^[a-zA-Z ]*$')]),
+      // name: new FormControl('', [Validators.required , Validators.pattern('^[a-zA-Z ]*$')]),
+      name : ["", [
+        Validators.required,
+        // this.removeSpaces,
+        Validators.pattern(/^[a-zA-Z\-\s]+$/),
+        // this.utility.isValidNameField,
+      ]],
       userid: ["", Validators.required],
       pwd: ["", [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/)]],
       confirmPass: ["", Validators.required],

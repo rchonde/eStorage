@@ -1,7 +1,14 @@
-<div class=" header bg-danger pb-6">
+<div class="master">
+  <ul class="nav nav-tabs header container-fluid bg-danger pb-3" role="tablist">
+      <li><a href="#dmsStatistics" class="active" data-toggle="tab">Template</a></li>
+      <li><a href="#documentControl" data-toggle="tab">Template Mapping</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="dmsStatistics">
+<div class=" header bg-danger pt-2 pb-6">
   <div class=" container-fluid">
     <div class=" header-body">
-      <div class=" row align-items-center py-4">
+      <div class=" row align-items-center pb-4">
         <div class=" col-lg-6 col-7">
           <h6 class=" h2 text-white d-inline-block mb-0">Template</h6>
 
@@ -167,6 +174,13 @@
                 </label>
                 <input class="form-control" id="TemplateName" formControlName="TemplateName" placeholder="Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
+                <div  class="errorMsg-feedback"
+                 *ngIf="f.TemplateName.touched && f.TemplateName.invalid && f.TemplateName.errors.required">Required</div>
+
+                <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.TemplateName.touched && f.TemplateName.invalid && f.TemplateName.errors.required">Name is required</div>
+                <div class="alert alert-danger" *ngIf="!!AddTemplateForm.get('name').errors?.pattern">Please enter valid name.
+                </div>
               </div>
             </div>
             <button class=" btn submit_btn" type="submit">
@@ -180,3 +194,9 @@
     </div>
   </div>
 </ng-template>
+</div>
+<div class="tab-pane fade" id="documentControl">
+  <app-template-mapping></app-template-mapping>
+</div>
+</div>
+</div>

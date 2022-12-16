@@ -172,7 +172,8 @@
 
                 <div style="margin-top: .25rem;" class="alert alert-danger"
                 *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required</div>
-      
+                <div class="alert alert-danger" *ngIf="!!AddUserForm.get('name').errors?.pattern">Please enter valid name.
+                </div>
       
          
               </div>

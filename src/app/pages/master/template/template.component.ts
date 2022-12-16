@@ -46,32 +46,35 @@ export class TemplateComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.AddTemplateForm = this.formBuilder.group({
-      TemplateName: ['', Validators.required],
+      TemplateName: ["", [
+        Validators.required,
+        Validators.pattern(/^[a-zA-Z\-\s]+$/),
+      ]],
       User_Token: localStorage.getItem('User_Token') ,
       CreatedBy: localStorage.getItem('UserID') ,
       id:[0]
     });
     this.geTempList();
 
-    this.Getpagerights();
+    // this.Getpagerights();
   }
  
-  Getpagerights() {
+  // Getpagerights() {
 
-    var pagename ="Template";
-    const apiUrl = this._global.baseAPIUrl + 'Admin/Getpagerights?userid=' + localStorage.getItem('UserID')+' &pagename=' + pagename + '&user_Token=' + localStorage.getItem('User_Token');
+  //   var pagename ="Template";
+  //   const apiUrl = this._global.baseAPIUrl + 'Admin/Getpagerights?userid=' + localStorage.getItem('UserID')+' &pagename=' + pagename + '&user_Token=' + localStorage.getItem('User_Token');
 
-    // const apiUrl = this._global.baseAPIUrl + 'Template/GetTemplate?user_Token=' + this.FileStorageForm.get('User_Token').value
-    this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {
-    //  this.TemplateList = data;    
+  //   // const apiUrl = this._global.baseAPIUrl + 'Template/GetTemplate?user_Token=' + this.FileStorageForm.get('User_Token').value
+  //   this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {
+  //   //  this.TemplateList = data;    
      
-    if (data <=0)
-    {
-      localStorage.clear();
-      this.router.navigate(["/Login"]);
-    }     
-    });
-  }
+  //   if (data <=0)
+  //   {
+  //     localStorage.clear();
+  //     this.router.navigate(["/Login"]);
+  //   }     
+  //   });
+  // }
 
   entriesChange($event) {
     this.entries = $event.target.value;
@@ -100,7 +103,9 @@ export class TemplateComponent implements OnInit {
     this.activeRow = event.row;
   }
 
-   
+  get f(){
+    return this.AddTemplateForm.controls;
+  }   
 
   geTempList() {
 
