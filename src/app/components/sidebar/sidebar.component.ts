@@ -406,18 +406,18 @@ export class SidebarComponent implements OnInit {
         route = { path: "folder", title: "Folder", type: "link" }
         break;
       }
-      case "Folder Mapping":{
-        route = { path: "folder-mapping", title: "Folder Mapping", type: "link" }
-        break;
-      }
+      // case "Folder Mapping":{
+      //   route = { path: "folder-mapping", title: "Folder Mapping", type: "link" }
+      //   break;
+      // }
       case "Document Type Mapping":{
         route = { path: "document-type-mapping", title: "Document Type Mapping", type: "link" }
         break;
       }
-      case "Template Mapping":{
-        route = { path: "template-mapping", title: "Template Mapping", type: "link" }
-        break;
-      }
+      // case "Template Mapping":{
+      //   route = { path: "template-mapping", title: "Template Mapping", type: "link" }
+      //   break;
+      // }
       case "Custom Forms":{
         route = { path: "view-custom-form", title: "View Custom Form", type: "link" }
         break;
@@ -426,10 +426,10 @@ export class SidebarComponent implements OnInit {
         route = { path: "cabinet", title: "Cabinet", type: "link" }
         break;
       }
-      case "Cabinet Mapping":{
-        route = { path: "cabinet-mapping", title: "Cabinet Mapping", type: "link" }
-        break;
-      }
+      // case "Cabinet Mapping":{
+      //   route = { path: "cabinet-mapping", title: "Cabinet Mapping", type: "link" }
+      //   break;
+      // }
       case "Template":{
         route = { path: "template", title: "Template", type: "link" }
         break;
@@ -438,10 +438,10 @@ export class SidebarComponent implements OnInit {
         route = { path: "sub-folder", title: "Sub Folder", type: "link" }
         break;
       }
-      case "Sub Folder Mapping":{
-        route = { path: "subfolder-mapping", title: "Sub Folder Mapping", type: "link" }
-        break;
-      }  
+      // case "Sub Folder Mapping":{
+      //   route = { path: "subfolder-mapping", title: "Sub Folder Mapping", type: "link" }
+      //   break;
+      // }  
       case "DSConfig":{
         route = { path: "DSConfig", title: "DSConfig", type: "link" }
         break;
