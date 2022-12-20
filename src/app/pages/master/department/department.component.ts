@@ -46,7 +46,7 @@ export class DepartmentComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.AddDepartmentForm = this.formBuilder.group({
-      DepartmentName: ['', Validators.required],
+      DepartmentName: ['',[Validators.required, Validators.pattern(/^[a-zA-Z0-9\-_\s]+$/)]],
       User_Token: localStorage.getItem('User_Token') ,
       CreatedBy: localStorage.getItem('UserID') ,
       id:[0]
@@ -55,6 +55,9 @@ export class DepartmentComponent implements OnInit {
     this.Getpagerights();
   }
 
+  get f(){
+    return this.AddDepartmentForm.controls;
+  }
   Getpagerights() {
 
     var pagename ="Cabinet";

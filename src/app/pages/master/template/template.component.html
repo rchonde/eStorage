@@ -174,13 +174,16 @@
                 </label>
                 <input class="form-control" id="TemplateName" formControlName="TemplateName" placeholder="Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
-                <div  class="errorMsg-feedback"
-                 *ngIf="f.TemplateName.touched && f.TemplateName.invalid && f.TemplateName.errors.required">Required</div>
+                <!-- <div  class="errorMsg-feedback"
+                 *ngIf="f.TemplateName.touched && f.TemplateName.invalid && f.TemplateName.errors.required">Required</div> -->
 
                 <div style="margin-top: .25rem;" class="alert alert-danger"
                 *ngIf="f.TemplateName.touched && f.TemplateName.invalid && f.TemplateName.errors.required">Name is required</div>
-                <div class="alert alert-danger" *ngIf="!!AddTemplateForm.get('name').errors?.pattern">Please enter valid name.
+                <div class="alert alert-danger" *ngIf="!!AddTemplateForm.get('TemplateName').errors?.pattern">Please enter valid name.
                 </div>
+                <!-- <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.TemplateName.touched && f.TemplateName.hasError('required')">Name is required</div>
+                 -->
               </div>
             </div>
             <button class=" btn submit_btn" type="submit">

@@ -191,6 +191,10 @@
                         
                         <input class="form-control form-control-sm" formControlName="BranchName" placeholder="Name" type="text"/>
                         <div class="valid-feedback">Looks good!</div>
+                        <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.BranchName.touched && f.BranchName.invalid && f.BranchName.errors.required">Name is required</div>
+                <div class="alert alert-danger" *ngIf="!!AddBranchForm.get('BranchName').errors?.pattern">Please enter valid name.
+                </div>
                       </div>
                     </div>
                     <button class=" btn submit_btn" type="submit">

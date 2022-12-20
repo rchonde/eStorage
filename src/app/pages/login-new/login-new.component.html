@@ -77,6 +77,16 @@
                   [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha">
                   </ngx-recaptcha2> -->
 
+                  <ngx-recaptcha2 #captchaElem
+                  [siteKey]="siteKey"
+                  (success)="handleSuccess($event)"
+                  [size]="size"
+                  [hl]="lang"
+                  [theme]="theme"
+                  [type]="type"
+                  formControlName="recaptcha">
+                </ngx-recaptcha2>
+
                   <!-- <ngx-recaptcha2 #captchaElem siteKey="6Lf0B58eAAAAAMA9umHGKya6yQprhUXGfumZyvJV" (success)="handleSuccess($event)" [size]="size"
                   [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha">
                   </ngx-recaptcha2> -->

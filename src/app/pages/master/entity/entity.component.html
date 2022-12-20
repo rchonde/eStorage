@@ -132,6 +132,10 @@
                 </label> -->
                 <input class="form-control" id="SubfolderName" formControlName="SubfolderName" placeholder="Sub Folder Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
+                <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.SubfolderName.touched && f.SubfolderName.invalid && f.SubfolderName.errors.required">Name is required</div>
+                <div class="alert alert-danger" *ngIf="!!AddEntityForm.get('SubfolderName').errors?.pattern">Please enter valid name.
+                </div>
               </div>
             </div>
             <button class=" btn submit_btn" type="submit">

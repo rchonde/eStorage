@@ -7,36 +7,38 @@
       </ul>
       <div id="myTabContent" class="tab-content">
           <div class="tab-pane active in" id="dmsStatistics">
-            <div class=" header-body header bg-danger pt-2 pb-6">
+            <div class="header bg-danger pt-2 pb-6">
               <div class="container-fluid">
-              <div class=" row align-items-center pb-4">
-                <div class=" col-lg-6 col-7">
-                  <h6 class=" h2 text-white d-inline-block mb-0">Cabinet</h6>
-        
-                  <nav
-                    aria-label="breadcrumb"
-                    class=" d-none d-md-inline-block ml-md-4"
-                  >
-                    <ol class=" breadcrumb breadcrumb-links breadcrumb-dark">
-                      <li class=" breadcrumb-item">
-                        <a href="javascript:void(0)"> <i class=" fas fa-home" routerLink="/search/quick-search"> </i> </a>
-                      </li>
-        
-                      <li class=" breadcrumb-item">
-                        <a href="javascript:void(0)"> Master </a>
-                      </li>
-        
-                      <li aria-current="page" class=" breadcrumb-item active">
-                        Cabinet
-                      </li>
-                    </ol>
-                  </nav>
+                <div class=" header-body">
+                  <div class=" row align-items-center pb-4">
+                    <div class=" col-lg-6 col-7">
+                      <h6 class=" h2 text-white d-inline-block mb-0">Cabinet</h6>
+            
+                      <nav
+                        aria-label="breadcrumb"
+                        class=" d-none d-md-inline-block ml-md-4"
+                      >
+                        <ol class=" breadcrumb breadcrumb-links breadcrumb-dark">
+                          <li class=" breadcrumb-item">
+                            <a href="javascript:void(0)"> <i class=" fas fa-home" routerLink="/search/quick-search"> </i> </a>
+                          </li>
+            
+                          <li class=" breadcrumb-item">
+                            <a href="javascript:void(0)"> Master </a>
+                          </li>
+            
+                          <li aria-current="page" class=" breadcrumb-item active">
+                            Cabinet
+                          </li>
+                        </ol>
+                      </nav>
+                    </div>
+            
+                    <div class=" col-lg-6 col-5 text-right">
+                      <a class=" btn btn-sm btn-neutral" (click)="addDepartment(DepartmentFormPopup)">Add Cabinet</a>
+                    </div>
+                  </div>
                 </div>
-        
-                <div class=" col-lg-6 col-5 text-right">
-                  <a class=" btn btn-sm btn-neutral" (click)="addDepartment(DepartmentFormPopup)">Add Cabinet</a>
-                </div>
-              </div>
               </div>
             </div>
             <div class=" container-fluid mt--6">
@@ -172,6 +174,10 @@
                 </label>
                 <input class="form-control" id="DepartmentName" formControlName="DepartmentName" placeholder="Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
+                <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.DepartmentName.touched && f.DepartmentName.invalid && f.DepartmentName.errors.required">Name is required</div>
+                <div class="alert alert-danger" *ngIf="!!AddDepartmentForm.get('DepartmentName').errors?.pattern">Please enter valid name.
+                </div>
               </div>
             </div>
             <button class=" btn submit_btn" type="submit">

@@ -46,7 +46,7 @@ rows = 10;
   ) {}
   ngOnInit() {
     this.AddTemplateForm = this.formBuilder.group({
-      DSConfigName: ['', Validators.required],
+      DSConfigName: ['',[Validators.required, Validators.pattern(/^[a-zA-Z\-\s]+$/)]],
       Cordinates: ['', Validators.required],
       PageNo: ['', Validators.required],
       User_Token: localStorage.getItem('User_Token') ,
@@ -57,6 +57,9 @@ rows = 10;
     this.Getpagerights();
   }
 
+  get f(){
+    return this.AddTemplateForm.controls;
+  }
 
   Getpagerights() {
 
