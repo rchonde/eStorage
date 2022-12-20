@@ -422,10 +422,12 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active{
 
 .master {
   padding: 20px 0px 0;
+  position: relative;
 }
 
 .master ul {
   border-bottom: none;
+  padding-top: 8rem;
 }
 
 .master ul li a {
@@ -439,4 +441,9 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active{
 .master ul li .active {
   color: #fff !important;
   border-bottom: 3px solid#fff !important;
+}
+.master .header-body{
+  position: absolute;
+    top: -95px;
+    width: 96%;
 }

@@ -8,6 +8,7 @@ import { DeleteFilesComponent } from './DeleteFiles/DeleteFiles.component';
 import { BasicSearchComponent } from './Basic-Search/Basic-Search.component';
 import { GlobalsearchComponent } from './globalsearch/globalsearch.component';
 import { OcrsearchComponent } from "./ocr-search/ocr-search.component";
+import { FolderStutureComponent } from "./folder-stuture/folder-stuture.component";
 
 
 //DataUploadComponent
@@ -24,6 +25,10 @@ export const searchRoutes: Routes = [
       {
         path: "file-storage",
        component: FileStorageComponent
+      },
+      {
+        path: "folder-stuture",
+       component: FolderStutureComponent
       },
       {
         path: "quick-search",

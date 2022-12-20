@@ -37,6 +37,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { TagInputModule } from "ngx-chips";
 import { NgxDocViewerModule } from "ngx-doc-viewer";
 import { OcrsearchComponent } from "./ocr-search/ocr-search.component";
+import { FolderStutureComponent } from './folder-stuture/folder-stuture.component';
 // import { NgxDocViewerModule } from "ngx-doc-viewer";
 
 // import {MatDatepickerInput} from '@angular/material/datepicker';
@@ -48,7 +49,7 @@ import { OcrsearchComponent } from "./ocr-search/ocr-search.component";
 //import { DepartmentComponent } from "./department/department.component";
 
 @NgModule({
-  declarations: [OcrsearchComponent,  DeleteFilesComponent,AdvancedSearchComponent,GlobalsearchComponent,BasicSearchComponent,FileStorageComponent,ContentSearchComponent,BulkDownlaodComponent,SearchComponent],
+  declarations: [OcrsearchComponent,  DeleteFilesComponent,AdvancedSearchComponent,GlobalsearchComponent,BasicSearchComponent,FileStorageComponent,ContentSearchComponent,BulkDownlaodComponent,SearchComponent, FolderStutureComponent],
   imports: [
     CommonModule,
   

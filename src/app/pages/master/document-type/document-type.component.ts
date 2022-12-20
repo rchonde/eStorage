@@ -41,7 +41,7 @@ export class DocumentTypeComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.DocTypeForm = this.formBuilder.group({
-      DocName: ['', Validators.required],
+      DocName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\-_\s]+$/)]],
       TemplateID: ['', Validators.required],
       DocDesc: ['', Validators.required],
       User_Token: localStorage.getItem('User_Token') ,
@@ -50,6 +50,10 @@ export class DocumentTypeComponent implements OnInit {
     });
     this.getDoctypeList();
     this.getTemplate();
+  }
+
+  get f(){
+    return this.DocTypeForm.controls;
   }
 
   entriesChange($event) {

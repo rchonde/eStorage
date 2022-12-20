@@ -506,6 +506,10 @@ export class SidebarComponent implements OnInit {
         route = { path: "file-storage", title: "File Storage", type: "link" }
         break;
       }
+      case "Folder Stuture":{
+        route = { path: "folder-stuture", title: "Folder Stuture", type: "link" }
+        break;
+      }
       case "BasicSearch":{
         route = { path: "basic-search", title: "Basic Search", type: "link" }
         break;

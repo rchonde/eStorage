@@ -47,9 +47,7 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {
     this.AddTemplateForm = this.formBuilder.group({
       TemplateName: ["", [
-        Validators.required,
-        Validators.pattern(/^[a-zA-Z\-\s]+$/),
-      ]],
+        Validators.required, Validators.pattern(/^[a-zA-Z0-9\-_\s]+$/)]],
       User_Token: localStorage.getItem('User_Token') ,
       CreatedBy: localStorage.getItem('UserID') ,
       id:[0]
@@ -203,7 +201,7 @@ searchTable($event) {
     this.submitted = true;
     //console.log(this.AddTemplateForm);
     if (this.AddTemplateForm.invalid) {
-      alert("Please Fill the Fields");
+      // alert("Please Fill the Fields");
       return;
     }
     const apiUrl = this._global.baseAPIUrl + 'Template/Update';

@@ -148,6 +148,10 @@
                 </label>
                 <input class="form-control" id="DocName" formControlName="DocName" placeholder="Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
+                <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.DocName.touched && f.DocName.invalid && f.DocName.errors.required">Doc Name is required</div>
+                <div class="alert alert-danger" *ngIf="!!DocTypeForm.get('DocName').errors?.pattern">Please enter valid doc name.
+                </div>
               </div>
               <div class="col-md-12 mb-3">
                 <label class="form-control-label" for="DocDesc">
@@ -155,6 +159,8 @@
                 </label>
                 <input class="form-control" id="DocDesc" formControlName="DocDesc" placeholder="Name" type="text"/>
                 <div class="valid-feedback">Looks good!</div>
+                <div style="margin-top: .25rem;" class="alert alert-danger"
+                *ngIf="f.DocDesc.touched && f.DocDesc.invalid && f.DocDesc.errors.required">Doc Desc is required</div>
               </div>              
 
             </div>

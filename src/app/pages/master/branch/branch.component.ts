@@ -47,7 +47,7 @@ rows = 10;
   ) {}
   ngOnInit() {
     this.AddBranchForm = this.formBuilder.group({
-      BranchName: ['', Validators.required],
+      BranchName: ['',[Validators.required, Validators.pattern(/^[a-zA-Z0-9\-_\s]+$/)]],
       DepartmentID: [0, Validators.required],
       User_Token: localStorage.getItem('User_Token') ,
       CreatedBy: localStorage.getItem('UserID') ,
@@ -59,6 +59,9 @@ rows = 10;
     this.Getpagerights();
   }
 
+  get f(){
+    return this.AddBranchForm.controls;
+  }
 
   Getpagerights() {
 

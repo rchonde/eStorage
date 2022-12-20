@@ -48,7 +48,7 @@ export class EntityComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.AddEntityForm = this.formBuilder.group({
-      SubfolderName: ['', Validators.required],
+      SubfolderName: ['',[Validators.required, Validators.pattern(/^[a-zA-Z0-9\-_\s]+$/)]],
       User_Token: localStorage.getItem('User_Token') ,
       CreatedBy: localStorage.getItem('UserID') ,
       BranchID:[0, Validators.required],
@@ -60,6 +60,10 @@ export class EntityComponent implements OnInit {
     this.getDepartmentList();
     this.getEntityList();
     //this.geBranchList();
+  }
+
+  get f(){
+    return this.AddEntityForm.controls;
   }
 
   Getpagerights() {
