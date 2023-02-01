@@ -248,7 +248,7 @@ this.Getpagerights();
     {
   //const apiUrl=this._global.baseAPIUrl+'BranchMapping/GetList?user_Token=123123'
       const apiUrl =
-      this._global.baseAPIUrl +"BranchMapping/GetBranchByDeptUserWise?ID="+localStorage.getItem('UserID')+"&user_Token="+localStorage.getItem('User_Token')+"&DeptID="+this.ContentSearchForm.get("DepartmentID").value;
+      this._global.baseAPIUrl +"BranchMapping/GetFolderDataBydeptandUserWise?ID="+localStorage.getItem('UserID')+"&user_Token="+localStorage.getItem('User_Token')+"&DeptID="+this.ContentSearchForm.get("DepartmentID").value;
       this._onlineExamService.getAllData(apiUrl).subscribe((data: any) => {
       this.BranchList = data;
 //  this._FilteredList = data;
@@ -1473,5 +1473,16 @@ private validateEmail(text: string) {
   return (text && EMAIL_REGEXP.test(text));
 }
 
+@HostListener('document:paste', ['$event']) blockPaste(e: KeyboardEvent) {
+  e.preventDefault();
+}
+
+@HostListener('document:copy', ['$event']) blockCopy(e: KeyboardEvent) {
+  e.preventDefault();
+}
+
+@HostListener('document:cut', ['$event']) blockCut(e: KeyboardEvent) {
+  e.preventDefault();
+}
       
 }

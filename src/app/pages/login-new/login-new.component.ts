@@ -51,7 +51,7 @@ export class LoginNewComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required])],
       password: ['', Validators.required],
-      recaptcha: ['', Validators.required]
+      // recaptcha: ['', Validators.required]
     });
     this.siteKey="6LeOZ4YUAAAAAJ8clQYNtOXNDHsd58KZHyJeILk6"
 

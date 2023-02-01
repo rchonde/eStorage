@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import swal from "sweetalert2";
+//import { Console } from "console";
 export enum SelectionType {
   single = "single",
   multi = "multi",
@@ -68,6 +69,7 @@ export class AddFieldComponent implements OnInit {
     const apiUrl=this._global.baseAPIUrl+'Template/GetTemplate?user_Token='+ localStorage.getItem('User_Token') 
     this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {     
     this.TemplateList = data;    
+    console.log("TempData", data);
     this.AddCustomForm.controls['TemplateID'].setValue(0);
     this.AddCustomForm.controls['FieldType'].setValue(0);    
     //this.AddEditBranchMappingForm.controls['UserIDM'].setValue(0);
@@ -98,6 +100,11 @@ export class AddFieldComponent implements OnInit {
     if (this.AddCustomForm.get("IsMandatory").value)
     {
       _IsMandatory =1;
+    }
+
+    if (this.AddCustomForm.get("TemplateID").value==0)
+    {
+      this.messagebox();
     }
 
     this.AddCustomForm.patchValue({
@@ -153,7 +160,7 @@ export class AddFieldComponent implements OnInit {
     this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {     
     var that = this;
     that._IndexFieldData =data;
-
+ //   console.log("getdata",data);
     //alert(that._UsersList[0].name);
     // if (that._UsersList !="")
     // {
@@ -166,6 +173,7 @@ export class AddFieldComponent implements OnInit {
     this.AddCustomForm.controls['ListData'].setValue(that._IndexFieldData.ListData);
     this.AddCustomForm.controls['IsMandatory'].setValue(that._IndexFieldData.IsMandatory);
     this.AddCustomForm.controls['IsAuto'].setValue(that._IndexFieldData.IsAuto);
+    this.AddCustomForm.controls['id'].setValue(this._IndexID);
 
     that._IndexFieldData="";
     localStorage.setItem('_TempID','0') ;
@@ -178,4 +186,25 @@ export class AddFieldComponent implements OnInit {
     //this.itemRows = Array.from(Array(Math.ceil(this.adresseList.length/2)).keys())
     });
   }   
+
+messagebox()
+{
+
+  this.toastr.show(
+    '<div class="alert-text"</div> <span class="alert-title" data-notify="title">Success!</span> <span data-notify="message">Please select Template</span></div>',
+    "",
+    {
+      timeOut: 3000,
+      closeButton: true,
+      enableHtml: true,
+      tapToDismiss: false,
+      titleClass: "alert-title",
+      positionClass: "toast-top-center",
+      toastClass:
+        "ngx-toastr alert alert-dismissible alert-success alert-notify"
+    }
+  );   
+
+}
+
 }

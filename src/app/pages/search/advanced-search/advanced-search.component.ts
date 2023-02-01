@@ -320,10 +320,12 @@ this.Getpagerights();
    
      //   alert(this.VarTempIDList);
 
+     var Var_tempID=1;
     // console.log("List" , this.VarTempIDList);
         let selectedFileNames ='';
         this.VarTempIDList.forEach(el => {
         selectedFileNames += el + ',';
+        Var_tempID=el;
         })
 
         this.ContentSearchForm.patchValue({
@@ -346,7 +348,7 @@ this.Getpagerights();
 
       this._FileList = data;
       this._FilteredList = data;
-      this.GetDisplayField(1);
+      this.GetDisplayField(Var_tempID);
   
         }); 
 
@@ -1266,7 +1268,7 @@ GetFilterData(tempID:any) {
        this._FileList = data;
        this._FilteredList = data;
        this.GetDisplayField(this.ContentSearchForm.get('TemplateID').value);
-
+//alert(this.ContentSearchForm.get('TemplateID').value);
       // console.log("Loggg1111",data);
      });
    }
@@ -1643,5 +1645,7 @@ private validateEmail(text: string) {
   var EMAIL_REGEXP = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/i;
   return (text && EMAIL_REGEXP.test(text));
 }
+
+
       
 }

@@ -103,7 +103,7 @@ loading: boolean = true;
 prepareTableData(tableData, headerList) {
   let formattedData = [];
  // alert(this.type);
-console.log(tableData);
+//console.log(tableData);
 // if (this.type=="Checker" )
 //{
   let tableHeader: any = [
@@ -214,22 +214,7 @@ geTemplateNameListByTempID(userid:number) {
   entriesChange($event) {
     this.entries = $event.target.value;
   }
-  filterTable($event) {
-    console.log($event.target.value);
-
-    let val = $event.target.value;
-    this._FilteredList = this._IndexList.filter(function (d) {
-      console.log(d);
-      for (var key in d) {
-        if (key == "TemplateName" || key == "DisplayName" || key == "FieldTypeText") {
-          if (d[key].toLowerCase().indexOf(val) !== -1) {
-            return true;
-          }
-        }
-      }
-      return false;
-    });
-  }
+ 
   onSelect({ selected }) {
     this.selected.splice(0, this.selected.length);
     this.selected.push(...selected);
