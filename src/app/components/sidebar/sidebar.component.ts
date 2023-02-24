@@ -299,9 +299,12 @@ export class SidebarComponent implements OnInit {
 
   getRoute(routeName: string): any {
     let route:any = {}
-//console.log(routeName);
+console.log(routeName);
 
     switch (routeName) {
+
+   //   console.log(routeNa//me);
+
       case "Dashboard":{
         route = {
           path: "/dashboards",
@@ -514,14 +517,14 @@ export class SidebarComponent implements OnInit {
         route = { path: "basic-search", title: "Basic Search", type: "link" }
         break;
       }
-      case "Basic search":{
-        route = { path: "basic-search", title: "Basic Search", type: "link" }
-        break;
-      }
-      case "Basic search":{
-        route = { path: "globalsearch", title: "Global Search", type: "link" }
-        break;
-      }
+      // case "Basic search":{
+      //   route = { path: "basic-search", title: "Basic Search", type: "link" }
+      //   break;
+      // }
+      // case "Basic search":{
+      //   route = { path: "globalsearch", title: "Global Search", type: "link" }
+      //   break;
+      // }
       case "ocrsearch":{
         route = { path: "ocrsearch", title: "OCR Search", type: "link" }
         break;
@@ -534,10 +537,11 @@ export class SidebarComponent implements OnInit {
       //   route = { path: "ASearch", title: "Search", type: "link" }
       //   break;
       // }
-       case "Bulk Downlaod":{
-        route = { path: "bulk-downlaod", title: "Bulk Download", type: "link" }
+       case "BulkDownlaod":{
+        route = { path: "delete-files", title: "Bulk Download", type: "link" }
         break;
       }
+      //Delete Files
       case "Delete Files":{
         route = { path: "delete-files", title: "Bulk Delete", type: "link" }
         break;

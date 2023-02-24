@@ -235,7 +235,7 @@ export class FileUploadComponent implements OnInit {
       {
     //const apiUrl=this._global.baseAPIUrl+'BranchMapping/GetList?user_Token=123123'
         const apiUrl =
-        this._global.baseAPIUrl +"BranchMapping/GetBranchByDeptUserWise?ID="+localStorage.getItem('UserID')+"&user_Token="+localStorage.getItem('User_Token')+"&DeptID="+this.FileUPloadForm.get("DeptID").value;
+        this._global.baseAPIUrl +"BranchMapping/GetFolderDataBydeptandUserWise?ID="+localStorage.getItem('UserID')+"&user_Token="+localStorage.getItem('User_Token')+"&DeptID="+this.FileUPloadForm.get("DeptID").value;
         this._onlineExamService.getAllData(apiUrl).subscribe((data: any) => {
         this.BranchList = data;
   //  this._FilteredList = data;

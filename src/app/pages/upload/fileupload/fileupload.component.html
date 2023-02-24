@@ -129,7 +129,7 @@
 
               <div class="col-sm-4">
                 <p-fileUpload #fileUpload (onSelect)="getFileDetails($event)" customUpload="true" (uploadHandler)="uploadFiles(fileUpload)"
-                  multiple="multiple" accept=".pdf,.doc,.docx" invalidFileSizeMessageSummary invalidFileTypeMessageSummary>
+                  multiple="multiple" accept=".pdf,.doc,.docx,.tif,.tiff,.jpeg,.jpg,.png,.zip" invalidFileSizeMessageSummary invalidFileTypeMessageSummary>
                   <ng-template pTemplate="content">
                       <ul *ngIf="myFiles.length">
                           <!-- <li *ngFor="let file of myFiles">{{file.name}} - {{file.size}} bytes</li> -->

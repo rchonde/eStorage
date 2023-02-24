@@ -103,7 +103,7 @@ for (var index1 in data[0]) {
             
     //  console.log("UN",this.loginForm.get("username").value);
       //console.log("ID",that._LogData.id);     
-       
+   //   this.router.navigate(['search/quick-search']);  
       
         if (this.loginForm.get("username").value == "admin")
         {
@@ -112,7 +112,9 @@ for (var index1 in data[0]) {
       else if(this.loginForm.get("username").value == "upload") {
         this.router.navigate(['upload/file-upload']);
       } else {
-        this.router.navigate(['dashboards/Userdashboard']);       
+     //   this.router.navigate(['dashboards/Userdashboard']);
+     this.router.navigate(['search/quick-search']);    
+     //quick-search;   
 
       }
 
