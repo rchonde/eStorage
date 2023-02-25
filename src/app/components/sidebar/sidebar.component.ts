@@ -299,7 +299,7 @@ export class SidebarComponent implements OnInit {
 
   getRoute(routeName: string): any {
     let route:any = {}
-console.log(routeName);
+//console.log(routeName);
 
     switch (routeName) {
 
@@ -538,7 +538,7 @@ console.log(routeName);
       //   break;
       // }
        case "BulkDownlaod":{
-        route = { path: "delete-files", title: "Bulk Download", type: "link" }
+        route = { path: "bulk-downlaod", title: "Bulk Download", type: "link" }
         break;
       }
       //Delete Files

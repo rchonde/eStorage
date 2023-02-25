@@ -24,32 +24,19 @@ export enum SelectionType {
   styleUrls: ["DeleteFiles.component.css"]
 })
 export class DeleteFilesComponent implements OnInit {
-  //entries: number = 10;
-  //selected: any[] = [];
-  //temp = [];
+ 
   activeRow: any;
-  SelectionType = SelectionType;
-//  modalRef: BsModalRef;  
-  //_FilteredList :any; 
+  SelectionType = SelectionType; 
   _TemplateList :any;  
   DeleteFilesForm: FormGroup;
   submitted = false;
   Reset = false;     
-  sMsg: string = '';  
-  //UploadDocForm: FormGroup;  
-  _SingleDepartment:any
-  
-  _FileNo: any = "";
-
-
+  sMsg: string = '';   
+  _SingleDepartment:any;  
+  _FileNo: any = ""; 
   _CSVData: any;
-  public records: any[] = [];
- 
-//  userID = 1;
-  //_DocTypeList: any;
-  //_FileList: any;
- 
-  
+  public records: any[] = []; 
+
   @Output() public onUploadFinished = new EventEmitter();    
   
     constructor(
@@ -86,7 +73,7 @@ export class DeleteFilesComponent implements OnInit {
 
       Getpagerights() {
 
-        var pagename ="DeleteFiles";
+        var pagename ="Delete Files";
         const apiUrl = this._global.baseAPIUrl + 'Admin/Getpagerights?userid=' + localStorage.getItem('UserID')+' &pagename=' + pagename + '&user_Token=' + localStorage.getItem('User_Token');
     
         // const apiUrl = this._global.baseAPIUrl + 'Template/GetTemplate?user_Token=' + this.FileStorageForm.get('User_Token').value
