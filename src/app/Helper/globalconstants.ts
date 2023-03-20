@@ -22,7 +22,7 @@ export class Globalconstants {
 //string = 'https://conceptdms.in/gdms/api/';
 //
 // string = 'https://e-storage.crownims.com/SODDMS/api/';////////
-//string = 'https://e-storage.crownims.com/EDMS/api/';//
+string = 'https://e-storage.crownims.com/EDMS/api/';//
 //string = 'http://192.168.0.155/EDMS/api/';
 //string = 'https://annapurana.crownims.com/annapuranaDMS/api/';
 
@@ -87,7 +87,7 @@ export class Globalconstants {
 
 //GDHospital
 
-string = 'https://DMSTest.crownims.com/DMSTestDMS/api/';
+//string = 'https://DMSTest.crownims.com/DMSTestDMS/api/';
   //string = 'https://Unitybank.crownims.com/UnitybankDMS/api/';
   // string = 'https://vivriticapital.crownims.com/vivriticapitalDMS/api/';
 
