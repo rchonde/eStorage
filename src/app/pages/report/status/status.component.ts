@@ -89,12 +89,12 @@ export class StatusComponent implements OnInit {
     this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {
     //  this.TemplateList = data;    
      
-    if (data <=0)
-    {
-      localStorage.clear();
-      this.router.navigate(["/Login"]);
+    // if (data <=0)
+    // {
+    //   localStorage.clear();
+    //   this.router.navigate(["/Login"]);
 
-    } 
+    // } 
     
     });
   }
@@ -186,7 +186,7 @@ prepareTableData(tableData, headerList) {
       'FileNo': el.FileNo,
       'PageCount': el.PageCount,
       'IsIndexing': el.IsIndexing,
-      'Status': el.Status,
+      // 'Status': el.Status,
       'EntryDate': el.EntryDate,
 
       //BranchName
@@ -216,7 +216,7 @@ BindHeader(tableData, headerList) {
     { field: 'FileNo', header: 'FILE NO.', index: 3 },
     { field: 'PageCount', header: 'PAGE COUNT', index: 3 },
     { field: 'IsIndexing', header: 'IS INDEXING', index: 3 },
-    { field: 'Status', header: 'STATUS', index: 3 },
+    // { field: 'Status', header: 'STATUS', index: 3 },
     { field: 'EntryDate', header: 'UPLOAD DATE', index: 3 }
     //,{ field: 'DownloadDate', header: 'DownloadDate', index: 3 },
    // { field: 'SendDate', header: 'SendDate', index: 7 }, { field: 'IsSend', header: 'IsSend', index: 8 },

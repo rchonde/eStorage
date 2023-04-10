@@ -6,7 +6,7 @@ export class Globalconstants {
 
 //build//////////////////
 //string = 'http://10.15.64.139/iocldms/api/';
-//string = 'http://10.6.233.41/bmcdms/api/';//////
+//string = 'http://10.6.233.41/bmcdms/api/';////////
 //string = 'http://localhost:50819/api/';
 
 //string = 'http://localhost:3626/api/';
@@ -21,8 +21,8 @@ export class Globalconstants {
 //string = 'https://conceptdms.in/gdms/api/';
 //string = 'https://conceptdms.in/gdms/api/';
 //
-// string = 'https://e-storage.crownims.com/SODDMS/api/';////////
-string = 'https://e-storage.crownims.com/EDMS/api/';//
+// string = 'https://e-storage.crownims.com/SODDMS/api/';//////////
+//string = 'https://e-storage.crownims.com/EDMS/api/';//
 //string = 'http://192.168.0.155/EDMS/api/';
 //string = 'https://annapurana.crownims.com/annapuranaDMS/api/';
 
@@ -58,7 +58,7 @@ string = 'https://e-storage.crownims.com/EDMS/api/';//
 //string = 'https://e-storage.crownims.com/rblegalDMS/api/';////////
 //string = 'https://yokohama.crownims.com/YokohamaDMS/api/';////////
 
-//String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
+String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
 
 //https://yokohama.crownims.com/Yokohama/#/Login
 
@@ -98,6 +98,6 @@ string = 'https://e-storage.crownims.com/EDMS/api/';//
 //string = 'https://AscendTelecom.crownims.com/AscendTelecomDMS/api/';
  
   //string = 'https://TechnovaImaging.crownims.com/TechnovaImagingDMS/api/';
- 
+//string = 'http://localhost/IDBIDMS/api/';
 
 }

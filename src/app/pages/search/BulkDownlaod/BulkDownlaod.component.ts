@@ -391,14 +391,14 @@ export class BulkDownlaodComponent implements OnInit {
           userID: localStorage.getItem('UserID')
         });
 
-        const apiUrl = this._global.baseAPIUrl + 'SearchFileStatus/downloadBulkFileBYCSVOnSFTP';
+        const apiUrl = this._global.baseAPIUrl + 'SearchFileStatus/dloadBulkFileBySftp';
  
       //  const apiUrl = this._global.baseAPIUrl + 'SearchFileStatus/SearchBulkFile?ID=' + localStorage.getItem('UserID') + '&_fileName='+ this._CSVData+' &user_Token='+ this.AdvancedSearchForm.get('User_Token').value;
        this._onlineExamService.postData(this.AdvancedSearchForm.value,apiUrl).subscribe((res: {}) => {
           if (res) {
 
           
-          saveAs(res, "Files" + '.zip');  
+        //  saveAs(res, "Files" + '.zip');  
            
           }
          //  console.log("Final FP-- res ", res);  
@@ -446,5 +446,7 @@ export class BulkDownlaodComponent implements OnInit {
         
 // }
  
+
+
         
 }

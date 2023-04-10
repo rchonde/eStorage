@@ -83,12 +83,12 @@ isValidationError: any;
     this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {
     //  this.TemplateList = data;    
      
-    if (data <=0)
-    {
-      localStorage.clear();
-      this.router.navigate(["/Login"]);
+    // if (data <=0)
+    // {
+    //   localStorage.clear();
+    //   this.router.navigate(["/Login"]);
 
-    } 
+    // } 
     
     });
   }
@@ -689,7 +689,7 @@ isValidationError: any;
          
           if (fieldIndex !=8)
           {
-          cssClass = ' error alpha-numeric-only';
+         // cssClass = ' error alpha-numeric-only';
           }
          
          // cssClass = ' error alpha-numeric-only';
