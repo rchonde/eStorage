@@ -58,7 +58,7 @@ export class Globalconstants {
 //string = 'https://e-storage.crownims.com/rblegalDMS/api/';////////
 //string = 'https://yokohama.crownims.com/YokohamaDMS/api/';////////
 
-//String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
+String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
 
 //https://yokohama.crownims.com/Yokohama/#/Login
 
@@ -101,5 +101,5 @@ export class Globalconstants {
 //string = 'http://localhost/IDBIDMS/api/';
 
 //https://Axistrustee.crownims.com/AxistrusteeDMS
-  string = 'https://Axistrustee.crownims.com/AxistrusteeDMS/api/';
+ // string = 'https://Axistrustee.crownims.com/AxistrusteeDMS/api/';
 }

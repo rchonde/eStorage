@@ -169,7 +169,7 @@ export class BranchMappingComponent implements OnInit {
       this.BranchMappingForm.get("User_Token").value;
     this._onlineExamService.getAllData(apiUrl).subscribe((data: any) => {
 
-      //console.log(data);
+      //console.log("data123",data);
 
       this._BranchList = data;
       this._FilteredList = data;
@@ -418,7 +418,7 @@ export class BranchMappingComponent implements OnInit {
          'DepartmentName': el.DepartmentName,
          'id': el.id,
          'UserID': el.UserID,
-        // 'Ref5': el.Ref5,
+         'DeptID': el.DeptID,
         // 'Ref6': el.Ref6
       
       });
@@ -497,12 +497,15 @@ export class BranchMappingComponent implements OnInit {
 
   editBranchMapping(template: TemplateRef<any>, row:any) {
 
-    console.log("row",row);
-    
+      
     this.addBranchMapping(template)
     this.checklistArray.clear()
-    this.AddBranchMappingForm.patchValue({UserID: row.userid})
+  //  this.AddBranchMappingForm.patchValue({UserID: row.userid})
+    this.AddBranchMappingForm.controls["DeptID"].setValue(row.DeptID);
+    this.AddBranchMappingForm.controls["UserID"].setValue(row.UserID);
+    this.GetBranchByDepartment(row.DeptID);
     this.getBranch(row.userid)
+
   }
 
   paginate(e) {

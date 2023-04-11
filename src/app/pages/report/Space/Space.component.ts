@@ -303,7 +303,7 @@ searchTable($event) {
       
       this._StatusList = data;          
       this._FilteredList = data;     
-      
+      this.prepareTableData(this._StatusList,this._StatusList);
     
 
   });
