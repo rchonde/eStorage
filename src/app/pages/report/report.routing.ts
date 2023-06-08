@@ -7,6 +7,8 @@ import { SpaceComponent } from "./Space/Space.component";
 import { EmailLogComponent } from "./EmailLog/EmailLog.component";
 import { PrintBarcodeComponent } from "./print-barcode/print-barcode.component";
 import { FilestatusComponent } from "./Filestatus/Filestatus.component";
+import { MinimasterComponent } from "./mini-master/mini-master.component";
+
 
 export const reportRoutes: Routes = [
   {
@@ -44,7 +46,12 @@ export const reportRoutes: Routes = [
       {
         path: "Filestatus",
         component: FilestatusComponent
-      },      
+      },  
+      
+      {
+        path: "Minimaster",
+        component: MinimasterComponent
+      },  
       
     ]
 

@@ -39,8 +39,8 @@
 
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">   
                
-              <select name="BranchID" id="BranchID" class="form-control" formControlName="BranchID" >
-                <option value='0'>Select Customer</option>   
+              <select name="BranchID"   class="form-control" formControlName="BranchID" >
+                <option value='0'>Select Folder</option>   
                 <option *ngFor="let _Bracnch of BranchList" [value]="_Bracnch.BranchID"  >  
                 {{_Bracnch.BranchName}}  
                 </option>

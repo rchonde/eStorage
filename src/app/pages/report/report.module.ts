@@ -23,10 +23,10 @@ import { EmailLogComponent } from "./EmailLog/EmailLog.component";
 import { PrintBarcodeComponent } from './print-barcode/print-barcode.component';
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { FilestatusComponent } from "./Filestatus/Filestatus.component";
-
+import { MinimasterComponent } from "./mini-master/mini-master.component";
 
 @NgModule({
-  declarations: [FilestatusComponent,StatusComponent,LogsComponent,MetadataComponent,TagReportComponent,SpaceComponent,EmailLogComponent, PrintBarcodeComponent],
+  declarations: [FilestatusComponent,StatusComponent,LogsComponent,MetadataComponent,TagReportComponent,SpaceComponent,EmailLogComponent, PrintBarcodeComponent,MinimasterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(reportRoutes),

@@ -7,7 +7,7 @@ export class Globalconstants {
 //build//////////////////
 //string = 'http://10.15.64.139/iocldms/api/';
 //string = 'http://10.6.233.41/bmcdms/api/';////////
-//string = 'http://localhost:50819/api/';
+string = 'http://localhost:50819/api/';
 
 //string = 'http://localhost:3626/api/';
 
@@ -58,9 +58,9 @@ export class Globalconstants {
 //string = 'https://e-storage.crownims.com/rblegalDMS/api/';////////
 //string = 'https://yokohama.crownims.com/YokohamaDMS/api/';////////
 
-String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
+//String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
 
-//https://yokohama.crownims.com/Yokohama/#/Login
+//String = https://yokohama.crownims.com/Yokohama/#/Login
 
 //string = 'https://annapurana.crownims.com/annapuranaDMS/api/';////////
 
@@ -101,5 +101,7 @@ String = 'https://idbi.crownims.com/IDBIinfoDMS/api/';////////
 //string = 'http://localhost/IDBIDMS/api/';
 
 //https://Axistrustee.crownims.com/AxistrusteeDMS
- // string = 'https://Axistrustee.crownims.com/AxistrusteeDMS/api/';
+  //string = 'https://Axistrustee.crownims.com/AxistrusteeDMS/api/';
+
+  //string = 'http://114.79.129.13/DMSAPI/api/';
 }

@@ -64,7 +64,7 @@ export class FileUploadComponent implements OnInit {
     ngOnInit() {
       this.FileUPloadForm = this.formBuilder.group({         
         
-        DeptID:[0],        
+        DeptID:[0, Validators.required],        
         DocID:[1],
         DSConfigName:[0],
         BranchID:['0', Validators.required],
@@ -103,12 +103,12 @@ export class FileUploadComponent implements OnInit {
       this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {
       //  this.TemplateList = data;    
        
-      if (data <=0)
-      {
-        localStorage.clear();
-        this.router.navigate(["/Login"]);
+      // if (data <=0)
+      // {
+      //   localStorage.clear();
+      //   this.router.navigate(["/Login"]);
   
-      } 
+      // } 
       
       });
     }
@@ -127,7 +127,7 @@ export class FileUploadComponent implements OnInit {
         const apiUrl=this._global.baseAPIUrl+'DepartmentMapping/GetDepartmentByUser?ID='+ localStorage.getItem('UserID')+'&user_Token='+localStorage.getItem('User_Token') 
         this._onlineExamService.getAllData(apiUrl).subscribe((data: {}) => {     
           this._DepartmentList = data;
-         // console.log("DepList",data);
+         console.log("DepList",data);
         //  this._FilteredList = data
           //this.itemRows = Array.from(Array(Math.ceil(this.adresseList.length/2)).keys())
         });
@@ -483,6 +483,12 @@ if (this.myFiles.length >=1000)
           if (this.FileUPloadForm.controls['SubfolderID'].value <= 0)
           {
             this.showmessage("Select SubfolderID");
+            //  return;
+
+          }
+          if (this.FileUPloadForm.controls['DeptID'].value <= 0)
+          {
+            this.showmessage("Select DeptID");
             //  return;
 
           }

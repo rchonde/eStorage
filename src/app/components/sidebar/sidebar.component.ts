@@ -591,7 +591,11 @@ export class SidebarComponent implements OnInit {
         route = { path: "logs", title: "Logs", type: "link" }
         break;
       }
-     
+
+      case "Minimaster":{
+        route = { path: "Minimaster", title: "Mini Master", type: "link" }
+        break;
+      }
       
       default: {route = null}
     }

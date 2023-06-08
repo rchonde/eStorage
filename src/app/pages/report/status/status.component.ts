@@ -29,10 +29,8 @@ export class StatusComponent implements OnInit {
   selected: any[] = [];
   temp = [];
   activeRow: any;
-  SelectionType = SelectionType;
-  modalRef: BsModalRef;
+  SelectionType = SelectionType; 
   StatusReportForm: FormGroup;
-  _SingleDepartment: any;
   submitted = false;
   Reset = false;     
   sMsg: string = '';     
@@ -42,8 +40,8 @@ export class StatusComponent implements OnInit {
   TemplateList:any;
   BranchList:any;
  
-  _ColNameList = ["Customer", "Department","SubfolderName" ,"FileNo", "PageCount", "IsIndexing","EntryDate","Status"];
-
+  _ColNameList = ["Customer","BranchName", "Department","SubfolderName" ,"FileNo", "PageCount", "IsIndexing","EntryDate","EntryBy"];
+  
 
   bsValue = new Date();
   bsRangeValue: Date[];
@@ -52,16 +50,10 @@ export class StatusComponent implements OnInit {
   rows = 10;
 
   constructor(
-    private modalService: BsModalService,
     public toastr: ToastrService,
     private formBuilder: FormBuilder,
     private _onlineExamService: OnlineExamServiceService,
     private _global: Globalconstants,
-    private http: HttpClient,
-    private httpService: HttpClient,
-    private route: ActivatedRoute,
-    private router: Router,
-    
 
   ) {}
   ngOnInit() {
@@ -102,22 +94,7 @@ export class StatusComponent implements OnInit {
   entriesChange($event) {
     this.entries = $event.target.value;
   }
-  filterTable($event) {
-    console.log($event.target.value);
 
-    let val = $event.target.value;
-    this._FilteredList = this._StatusList.filter(function (d) {
-      console.log(d);
-      for (var key in d) {
-        if (key == "Department" || key == "Customer" || key == "FileNo" ) {
-          if (d[key].toLowerCase().indexOf(val) !== -1) {
-            return true;
-          }
-        }
-      }
-      return false;
-    });
-  }
   onSelect({ selected }) {
     this.selected.splice(0, this.selected.length);
     this.selected.push(...selected);
@@ -165,12 +142,14 @@ prepareTableData(tableData, headerList) {
   let tableHeader: any = [
     { field: 'srNo', header: "SR NO", index: 1 },
     { field: 'Department', header: 'CABINET', index: 3 },
+    { field: 'BranchName', header: 'FOLDER', index: 3 },
     { field: 'SubfolderName', header: 'SUB FOLDER NAME', index: 2 },
     { field: 'FileNo', header: 'FILE NO.', index: 3 },
     { field: 'PageCount', header: 'PAGE COUNT', index: 3 },
     { field: 'IsIndexing', header: 'IS INDEXING', index: 3 },
-    { field: 'Status', header: 'STATUS', index: 3 },
+    // { field: 'Status', header: 'STATUS', index: 3 },
     { field: 'EntryDate', header: 'UPLOAD DATE', index: 3 }
+    
     //,{ field: 'DownloadDate', header: 'DownloadDate', index: 3 },
    // { field: 'SendDate', header: 'SendDate', index: 7 }, { field: 'IsSend', header: 'IsSend', index: 8 },
 
@@ -212,6 +191,7 @@ BindHeader(tableData, headerList) {
   let tableHeader: any = [
     { field: 'srNo', header: "SR NO", index: 1 },
     { field: 'Department', header: 'CABINET', index: 3 },
+    { field: 'BranchName', header: 'FOLDER', index: 3 },
     { field: 'SubfolderName', header: 'SUB FOLDER NAME', index: 2 },
     { field: 'FileNo', header: 'FILE NO.', index: 3 },
     { field: 'PageCount', header: 'PAGE COUNT', index: 3 },
@@ -286,7 +266,6 @@ searchTable($event) {
     this.getStatusList();
   }
 
-
   getTemplate() {  
 
     const apiUrl = this._global.baseAPIUrl + 'TemplateMapping/GetTemplateMappingListByUserID?UserID=' + localStorage.getItem('UserID') + '&user_Token='+localStorage.getItem('User_Token')   
@@ -302,20 +281,6 @@ searchTable($event) {
 });
 }
 
-  // getStatusList() {  
-  //   const apiUrl = this._global.baseAPIUrl + 'Status/GetStatusReport';          
-  //   this._onlineExamService.postData(this.StatusReportForm.value,apiUrl)
-  //   // .pipe(first())
-
-  //   .subscribe( data => {
-  //     alert(data);
-  //     this._StatusList = data;          
-
-  // });
-
-
-  // } 
-  
   getStatusList() {  
 
     const apiUrl = this._global.baseAPIUrl + 'Status/GetStatusReport';          
@@ -323,17 +288,9 @@ searchTable($event) {
     // .pipe(first())
 
     .subscribe( data => {
-      
       this._StatusList = data;          
-      this._FilteredList = data;     
-      
-     // this.BranchList = data;
-   //   this._FilteredList= data;
-   //   console.log(data);
-     // this.StatusReportForm.controls['TemplateID'].setValue(0);
-    //  this.StatusReportForm.controls['BranchID'].setValue(0);
+      this._FilteredList = data;  
       this.prepareTableData( this._StatusList,  this._FilteredList);
-   //   console.log(data);
 
   });
 
